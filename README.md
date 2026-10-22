@@ -1,10 +1,10 @@
-# Progetto Cloud Computing: Motore di Ricerca con Inverted Index
+# Cloud Computing Project: Search Engine with Inverted Index
 
-## Obiettivo
+## Objective
 
-Il progetto prevede la realizzazione di un **inverted index** a partire da una collezione di file. L'obiettivo è realizzare un sistema scalabile ed estensibile, in grado di indicizzare testi e rispondere a query testuali.
+The project involves the creation of an **inverted index** starting from a collection of files. The goal is to build a scalable and extensible system capable of indexing texts and answering textual queries.
 
-## Esempio di Inverted Index
+## Inverted Index Example
 
 ```
 cloud      doc1.txt:1  doc2.txt:1
@@ -13,34 +13,34 @@ is         doc1.txt:1
 important  doc2.txt:1
 ```
 
-## Requisiti principali
+## Main Requirements
 
-- Installare **Hadoop in modalità completamente distribuita** (fully distributed mode).
-- Implementare due versioni dell’inverted index:
-  - Una utilizzando **Hadoop (Java)**
-  - Una utilizzando **Spark (Python)**
-- Per ogni parola rilevata, l’output dell’inverted index deve includere:
-  - I nomi dei file in cui compare la parola
-  - Il numero di occorrenze della parola in ciascun file
+- Install **Hadoop in fully distributed mode**.
+- Implement two versions of the inverted index:
+  - One using **Hadoop (Java)**
+  - One using **Spark (Python)**
+- For each detected word, the inverted index output must include:
+  - The names of the files where the word appears
+  - The number of occurrences of the word in each file
 
-- Implementare la logica di **combiner**
-- Utilizzare i metodi `setup()` e `cleanup()`, se appropriato
-- Realizzare un semplice **motore di ricerca in Python (non parallelo)** che:
-  - Riceve una query testuale
-  - Restituisce **solo i nomi dei file** che contengono **tutti** i termini della query (non deve indicare il numero di occorrenze)
+- Implement **combiner** logic
+- Use the `setup()` and `cleanup()` methods, if appropriate
+- Build a simple **non-parallel search engine in Python** that:
+  - Receives a text query
+  - Returns **only the file names** that contain **all** query terms (it must not indicate the number of occurrences)
 
-- Usare una collezione di file a scelta (es. articoli, libri, pagine web), con dimensioni variabili da **pochi KB a diversi GB**
-- Eseguire una **valutazione comparativa delle performance**, raccogliendo:
-  - Tempo di esecuzione
-  - Uso di memoria
-  - Altri indicatori rilevanti
-- Redigere una **relazione tecnica** che contenente:
-  - Pseudocodice della soluzione MapReduce in Hadoop
-  - Descrizione dei dataset
-  - Analisi sperimentale
+- Use a collection of files of choice (e.g., articles, books, web pages), varying in size from **a few KB to several GB**
+- Perform a **comparative performance evaluation**, collecting:
+  - Execution time
+  - Memory usage
+  - Other relevant indicators
+- Draft a **technical report** containing:
+  - Pseudocode of the MapReduce solution in Hadoop
+  - Description of the datasets
+  - Experimental analysis
 
-## Requisiti aggiuntivi
+## Additional Requirements
 
-- Implementare la logica di **in-mapper combining**
-- Sviluppare una **versione non parallela in Python** per la costruzione dell’inverted index 
-- Aumentare il **numero di reducer** e raccogliere statistiche relative all'esecuzione
+- Implement **in-mapper combining** logic
+- Develop a **non-parallel version in Python** for building the inverted index 
+- Increase the **number of reducers** and collect execution-related statistics
